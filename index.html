@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BreachToPatch — From Breach to Patch</title>
+  <meta name="description" content="A community-driven, open-source cybersecurity platform. Attack vulnerable machines, patch them, repeat.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.svg" width="24" height="24" alt="">
+      <span>Breach<span class="btop">To</span>Patch</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">&#x2630;</button>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="machines.html">Machines</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="https://github.com/BreachToPatch" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-eyebrow">Open-source · GitHub-native · Free forever</p>
+    <h1 class="hero-title">
+      From <span class="breach">Breach</span><br>
+      to <span class="patch">Patch</span>.
+    </h1>
+    <p class="hero-subtitle">
+      A community cybersecurity platform where you attack vulnerable machines,
+      then fix them. Every exploit becomes a regression test.
+      Everything happens through GitHub Pull Requests.
+    </p>
+    <div class="hero-actions">
+      <a href="machines.html" class="btn btn-red">🔴 Start Hacking</a>
+      <a href="https://github.com/BreachToPatch/docs/blob/main/GUIDE_REDTEAM.md"
+         class="btn btn-outline" target="_blank" rel="noopener">Read the Guide</a>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <div class="container">
+
+    <p class="section-title">How it works</p>
+    <div class="cycle">
+      <div class="cycle-step">
+        <div class="cycle-number">01</div>
+        <div class="cycle-icon">⚙️</div>
+        <div class="cycle-name">Create</div>
+        <div class="cycle-desc">A contributor ships a vulnerable machine — defined entirely in code (Vagrant + Docker). No binary blobs.</div>
+      </div>
+      <div class="cycle-step red">
+        <div class="cycle-number">02</div>
+        <div class="cycle-icon">🔴</div>
+        <div class="cycle-name">Red Team</div>
+        <div class="cycle-desc">Players download the VM and try to capture the root flag. Submit a writeup + exploit script via Pull Request.</div>
+      </div>
+      <div class="cycle-step">
+        <div class="cycle-number">03</div>
+        <div class="cycle-icon">🩸</div>
+        <div class="cycle-name">Reveal</div>
+        <div class="cycle-desc">First Blood unlocks the source code. The exploit is locked as the regression test for all future patches.</div>
+      </div>
+      <div class="cycle-step teal">
+        <div class="cycle-number">04</div>
+        <div class="cycle-icon">🔵</div>
+        <div class="cycle-name">Blue Team</div>
+        <div class="cycle-desc">Defenders fork the source, patch the root cause, and submit via PR. The CI replays the exploit — it must fail.</div>
+      </div>
+    </div>
+
+    <!-- Why BtoP -->
+    <p class="section-title">Why BreachToPatch</p>
+    <div class="machines-grid" style="margin-bottom: 4rem;">
+      <div class="machine-card">
+        <div class="machine-name" style="color: var(--yellow)">🐝 GitHub-native</div>
+        <p class="machine-desc">Every pwn and every patch is a public Pull Request. Your contributions build your GitHub profile — a real asset for cyber recruiters.</p>
+      </div>
+      <div class="machine-card">
+        <div class="machine-name" style="color: var(--red)">⚔️ Double-edged exploits</div>
+        <p class="machine-desc">The exploit you submit becomes the automated regression test that validates every future patch. Attack and defense are intertwined.</p>
+      </div>
+      <div class="machine-card">
+        <div class="machine-name" style="color: var(--teal)">💾 Infrastructure as Code</div>
+        <p class="machine-desc">Machines are plain text files — Vagrant, Ansible, Docker Compose. No huge .ova files. Versionable, forkable, auditable.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center; padding: 2rem 0 4rem;">
+      <p class="section-title" style="justify-content: center; margin-bottom: 1.5rem;">Ready to play?</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="machines.html" class="btn btn-red">🔴 View Machines</a>
+        <a href="leaderboard.html" class="btn btn-teal">🏆 Leaderboard</a>
+        <a href="https://github.com/BreachToPatch/docs" class="btn btn-outline" target="_blank" rel="noopener">📚 Documentation</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>
+      BreachToPatch is open-source and free forever.
+      Built on <a href="https://github.com/BreachToPatch" target="_blank" rel="noopener">GitHub</a>.
+      &nbsp;·&nbsp;
+      <a href="https://github.com/BreachToPatch/docs/blob/main/MANIFESTO.md" target="_blank" rel="noopener">Manifesto</a>
+    </p>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
