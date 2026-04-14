@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machines — BreachToPatch</title>
+  <meta name="description" content="Browse vulnerable machines available for Red Team and Blue Team challenges.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.svg" width="24" height="24" alt="">
+      <span>Breach<span class="btop">To</span>Patch</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">&#x2630;</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="machines.html" class="active">Machines</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="https://github.com/BreachToPatch" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </nav>
+
+  <div class="container page">
+    <div class="page-header">
+      <h1>Machines</h1>
+      <p>
+        Download a machine, boot the VM, capture the flag.
+        Submit a writeup via Pull Request — the CI validates automatically.
+      </p>
+    </div>
+
+    <p class="section-title">Active &amp; Archived</p>
+
+    <p id="loading" class="loading">Loading machines from GitHub…</p>
+    <div id="machines-grid" class="machines-grid"></div>
+  </div>
+
+  <footer class="footer">
+    <p>
+      BreachToPatch is open-source and free forever.
+      Built on <a href="https://github.com/BreachToPatch" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/machines.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

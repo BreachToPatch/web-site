@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard — BreachToPatch</title>
+  <meta name="description" content="Live scoreboard — top players ranked by points earned from pwns and patches.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.svg" width="24" height="24" alt="">
+      <span>Breach<span class="btop">To</span>Patch</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">&#x2630;</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="machines.html">Machines</a>
+      <a href="leaderboard.html" class="active">Leaderboard</a>
+      <a href="https://github.com/BreachToPatch" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </nav>
+
+  <div class="container page">
+    <div class="page-header">
+      <h1>Leaderboard</h1>
+      <p>Points are awarded automatically when a pwn or patch PR is merged.</p>
+    </div>
+
+    <div class="leaderboard-meta" id="last-updated"></div>
+
+    <p id="loading" class="loading">Loading leaderboard…</p>
+
+    <div class="table-wrap">
+    <table class="leaderboard-table" id="leaderboard-table" style="display:none">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Player</th>
+          <th>Points</th>
+          <th>Pwns</th>
+          <th>Patches</th>
+          <th>Badges</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard-body"></tbody>
+    </table>
+    </div>
+
+    <div style="margin-top:3rem;">
+      <p class="section-title">Scoring</p>
+      <div class="machines-grid">
+        <div class="machine-card">
+          <div class="machine-name" style="color:var(--red)">🩸 First Blood</div>
+          <p class="machine-desc">First player to pwn a machine — <strong style="color:var(--yellow)">100 pts</strong></p>
+        </div>
+        <div class="machine-card">
+          <div class="machine-name">⚔️ Subsequent pwn</div>
+          <p class="machine-desc">Any validated pwn after First Blood — <strong style="color:var(--yellow)">50 pts</strong></p>
+        </div>
+        <div class="machine-card">
+          <div class="machine-name" style="color:var(--teal)">🛡️ Patch validated</div>
+          <p class="machine-desc">A Blue Team patch that blocks the exploit — <strong style="color:var(--yellow)">75 pts</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>
+      BreachToPatch is open-source and free forever.
+      Built on <a href="https://github.com/BreachToPatch" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="js/nav.js"></script>
+  <script>
+    // Show table once loading is done
+    const observer = new MutationObserver(() => {
+      const loading = document.getElementById('loading');
+      if (loading.style.display === 'none') {
+        document.getElementById('leaderboard-table').style.display = 'table';
+        observer.disconnect();
+      }
+    });
+    observer.observe(document.getElementById('loading'), { attributes: true });
+  </script>
+</body>
+</html>
